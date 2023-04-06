@@ -14,7 +14,8 @@ class UserDetailAPI(APIView):
   authentication_classes = [SessionAuthentication, BasicAuthentication]
   permission_classes = [IsAuthenticated]
   def get(self,request,*args,**kwargs):
-    user = CustomUser.objects.get(id=request.user.id)
+    # user = CustomUser.objects.get(id=request.user.id)
+    user = CustomUser.objects.all()
     serializer = UserSerializer(user)
     return Response(serializer.data)
 
@@ -23,3 +24,11 @@ class RegisterUserAPIView(generics.CreateAPIView):
   authentication_classes = [SessionAuthentication, BasicAuthentication]
   permission_classes = [IsAuthenticated]
   serializer_class = UserRegisterSerializer
+
+  def create(self, request, *args, **kwargs):
+    response = super().create(request, *args, **kwargs)
+    return Response({
+      'status': 200,
+      'message': 'Registration has been successfully!',
+      'data': response.data
+    })
