@@ -1,0 +1,113 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link href="/static/assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/assets/css/styles.css" rel="stylesheet">
+  <link href="/static/css/signup.css" rel="stylesheet">
+  <title>Create Account</title>
+</head>
+
+<body>
+  <main class="form signup d-grid justify-content-center align-items-center p-2">
+                  <div id="django-message">
+            </div>
+    <div class="d-grid justify-content-center align-items-center">
+      <div class="bg-white text-dark p-5 rounded">
+        <h1 class="text-center text-uppercase mb-4">Create Account</h1>
+        <div class="loader" style="display:None"></div>
+        <form>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6 col-sm-12">
+                <div class="mb-3">
+                  <label class="form-label" for="firstName">First Name</label>
+                  <input class="form-control" type="text" name="firstName" id="firstName"
+                    placeholder="Please enter first name">
+                </div>
+
+              </div>
+              <div class="col-md-6 col-sm-12">
+                <div class="mb-3">
+                  <label class="form-label" for="lastName">Last Name</label>
+                  <input class="form-control" type="text" name="lastName" id="lastName"
+                    placeholder="Please enter last name">
+                </div>
+              </div>
+              </div>
+              <div class="row">
+              <div class="col-md-6 col-sm-12">
+                <div class="mb-3">
+                  <label class="form-label" for="username">Username</label>
+                  <input class="form-control" type="text" name="username" id="username"
+                    placeholder="Please enter username">
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-12">
+                <div class="mb-3">
+                  <label class="form-label" for="phone">Phone Number</label>
+                   <input type="tel" id="phone" name="phone" placeholder="8888888888" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required>
+                </div>
+              </div>
+              </div>
+              <div class="row">
+              <div class="col-md-6 col-sm-12">
+                <div class="mb-3">
+                  <label class="form-label" for="gender">Gender</label>
+                  <select class="form-control" aria-label="gender" name="gender" id="gender">
+                    <option selected>Please select gender</option>
+                    <option value="M">Male</option>
+                    <option value="F">Female</option>
+                    <option value="O">Other</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-12">
+                <div class="mb-3">
+                  <label class="form-label" for="email">Email</label>
+                  <input class="form-control" type="text" name="email" id="email" placeholder="Please enter email">
+                </div>
+              </div>
+              </div>
+              <div class="row">
+              <div class="col-md-6 col-sm-12">
+                <div class="mb-3">
+                  <label class="form-label" for="password">Password</label>
+                  <input class="form-control" type="password" name="password" id="password"
+                    placeholder="Please enter password">
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-12">
+                <div class="mb-3">
+                  <label class="form-label" for="re_password">Re Password</label>
+                  <input class="form-control" type="password" name="re_password" id="re_password"
+                    placeholder="Please enter re-password">
+                </div>
+              </div>
+              </div>
+              <div class="d-grid gap-2 mb-3">
+                <a onclick="registration()" class="btn btn-primary text-capitalize">Create account</a>
+              </div>
+            </div>
+        </form>
+        <span class="d-flex justify-content-center">Have already an account ? <a aria-disabled="true" tabindex="-1"
+          href="/login">Login</a></span>
+      </div>
+    </div>
+  </main>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script rel="text/javascript" src='/static/js/index.js'></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
